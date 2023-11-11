@@ -7,7 +7,7 @@ const tools = [
   { level: 2, name: "Old-timey Push Lawnmower", cost: 25, generates: 50 },
   { level: 3, name: "Fancy Battery-Powered Lawnmower", cost: 250, generates: 100 },
   { level: 4, name: "Team of Starving Students", cost: 500, generates: 250 },
-  { level: 5, name: "No more upgrades", cost: 2000, generates: 250 },
+  { level: 5, name: "No more upgrades", cost: 20000, generates: 250 },
 ];
 
 // landscaper stats
@@ -24,7 +24,7 @@ let nextItem = tools[currentLevel + 1];
 function cutGrass() {
   landscaper.money += landscaper.tool.generates;
   alert(
-    `You cut some grass with ${landscaper.tool.name} and made $${landscaper.tool.generates}. You have $${landscaper.money}.`
+    `You cut some grass with ${landscaper.tool.name} and made $${landscaper.tool.generates}. You now have $${landscaper.money}.`
   );
   checkUpgrade();
 }
@@ -63,7 +63,8 @@ function startGame() {
 }
 
 function end() {
-  alert(`You win!`);
+  alert(`You lost everything in a fire, let's start again`);
+  alert(`jk. You win!`);
 }
 // alert messages
 function maxedOut() {
@@ -80,7 +81,7 @@ function needToWork() {
   if (landscaper.money >= 1000 && landscaper.tool.level >= 4) {
     end();
   } else {
-    answer = prompt("Mow some grass? [Y]es/[N]o");
+    answer = prompt("Cut some grass today? [Y]es/[N]o");
     if (answer == "y") {
       cutGrass();
     } else {
@@ -92,7 +93,7 @@ function needToWork() {
 
 function askUpgrade() {
   let answer = "";
-  answer = prompt(`You have enough money to upgrade to ${nextItem.name}. Wanna upgrade? [Y]es/[N]o`);
+  answer = prompt(`You now have enough money to upgrade to ${nextItem.name}. Wanna upgrade? [Y]es/[N]o`);
   if (answer == "y") {
     upgrade();
   } else if (answer == "n") {
@@ -105,6 +106,3 @@ function askUpgrade() {
 }
 
 startGame();
-
-// win the game when you have a team of starving students and 1000
-// say that they won the game
