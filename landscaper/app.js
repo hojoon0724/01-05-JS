@@ -12,8 +12,8 @@ const tools = [
 
 // landscaper stats
 const landscaper = {
-  money: 1000,
-  tool: tools[4],
+  money: 0,
+  tool: tools[0],
 };
 
 // define tool level
