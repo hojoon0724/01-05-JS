@@ -1,100 +1,110 @@
 console.log("noop noop");
 
-// landscaper stats
-const landscaper = {
-  name: "userName",
-  money: 0,
-  tool: 0,
-};
-
 // tools stats
 const tools = [
-  { name: "Teeth", cost: 0, generates: 1 },
-  { name: "Rusty Scissors", cost: 5, generates: 5 },
-  { name: "Old-timey Push Lawnmower", cost: 25, generates: 50 },
-  { name: "Fancy Battery-Powered Lawnmower", cost: 250, generates: 100 },
-  { name: "Team of Starving Students", cost: 500, generates: 250 },
+  { level: 0, name: "Teeth", cost: 0, generates: 1 },
+  { level: 1, name: "Rusty Scissors", cost: 5, generates: 5 },
+  { level: 2, name: "Old-timey Push Lawnmower", cost: 25, generates: 50 },
+  { level: 3, name: "Fancy Battery-Powered Lawnmower", cost: 250, generates: 100 },
+  { level: 4, name: "Team of Starving Students", cost: 500, generates: 250 },
+  { level: 5, name: "No more upgrades", cost: 2000, generates: 250 },
 ];
 
-// current tool
-const tool = tools[landscaper.tool];
+// landscaper stats
+const landscaper = {
+  money: 0,
+  tool: tools[0],
+};
 
-// function to cut grass
+// define tool level
+let currentLevel = landscaper.tool.level;
+let nextItem = tools[currentLevel + 1];
+
+// actions
 function cutGrass() {
-  landscaper.money += tool.generates;
+  landscaper.money += landscaper.tool.generates;
   alert(
-    `You cut some grass and made $${tool.generates}. You have $${landscaper.money}.`
+    `You cut some grass with ${landscaper.tool.name} and made $${landscaper.tool.generates}. You have $${landscaper.money}.`
   );
-  askNext();
+  checkUpgrade();
 }
-//TODO: REDUCE
-// function to buy scissors
-function buyScissors() {
-  const item = tools[1];
-  if (landscaper.money < item.cost) {
-    alert(`You have $${landscaper.money} but ${item.name} costs $${item.cost}`);
+
+function levelUp() {
+  if (currentLevel === 4) {
+    maxedOut();
+  } else if (landscaper.money < nextItem.cost) {
+    notEnoughMoney();
   } else {
-    landscaper.tool = item;
-    landscaper.money -= landscaper.tool.cost;
+    upgrade();
   }
 }
 
-// function to buy push lawnmower
-function buyPushLawnmower() {
-  const item = tools[2];
-  if (landscaper.money < item.cost) {
-    alert(`You have $${landscaper.money} but ${item.name} costs $${item.cost}`);
+// calculations
+function upgrade() {
+  currentLevel++;
+  landscaper.money -= nextItem.cost;
+  landscaper.tool = nextItem;
+  alert(`You spent $${nextItem.cost} and upgraded to ${nextItem.name}`);
+  nextItem = tools[currentLevel + 1];
+  alert(`You now have $${landscaper.money}. Next item: ${nextItem.name}`);
+  needToWork();
+}
+
+function checkUpgrade() {
+  if (landscaper.money >= nextItem.cost) {
+    askUpgrade();
   } else {
-    landscaper.tool = item;
-    landscaper.money -= landscaper.tool.cost;
+    needToWork();
   }
 }
 
-// function to buy lawnmower
-function buyBatteryLawnmower() {
-  const item = tools[3];
-  if (landscaper.money < item.cost) {
-    alert(`You have $${landscaper.money} but ${item.name} costs $${item.cost}`);
+function startGame() {
+  needToWork();
+}
+
+function end() {
+  alert(`You win!`);
+}
+// alert messages
+function maxedOut() {
+  alert(`You've reached the maximum level`);
+}
+
+function notEnoughMoney() {
+  alert(`You have $${landscaper.money} but ${nextItem.name} costs $${nextItem.cost}`);
+}
+
+// prompts
+function needToWork() {
+  let answer = "";
+  if (landscaper.money >= 1000 && landscaper.tool.level >= 4) {
+    end();
   } else {
-    landscaper.tool = item;
-    landscaper.money -= landscaper.tool.cost;
+    answer = prompt("Mow some grass? [Y]es/[N]o");
+    if (answer == "y") {
+      cutGrass();
+    } else {
+      alert("You don't really have a choice");
+      cutGrass();
+    }
   }
 }
 
-// buy team
-function buyTeam() {
-  const item = tools[4];
-  if (landscaper.money < item.cost) {
-    alert(`You have $${landscaper.money} but ${item.name} costs $${item.cost}`);
-  } else {
-    landscaper.tool = item;
-    landscaper.money -= landscaper.tool.cost;
-  }
-}
-//TODO: REDUCE
-
-// * Game mechanics
-//!alert(`You're now a landscaper. The better the tools, the more you'll earn`);
-let answer = "c";
-
-function askNext() {
-  if (landscaper.money >= tools[1]) {
-    answer = prompt(
-      `You have enough to upgrade to ${tools[1].name}. Do you want to upgrade?, yes / no`
-    );
-  } else answer = prompt(`Let's [c]ut some grass. Or [u]pgrade`);
-  if (answer == "c") {
+function askUpgrade() {
+  let answer = "";
+  answer = prompt(`You have enough money to upgrade to ${nextItem.name}. Wanna upgrade? [Y]es/[N]o`);
+  if (answer == "y") {
+    upgrade();
+  } else if (answer == "n") {
+    alert(`Knock yourself out`);
     cutGrass();
-  } else if (answer == "u") {
-    console.log("upgrade");
   } else {
-    alert(`dude, just pick one from your options`);
-    askNext();
+    alert(`I'll take that as a yes`);
+    upgrade();
   }
 }
 
-askNext();
-console.log(answer);
+startGame();
 
 // win the game when you have a team of starving students and 1000
 // say that they won the game
