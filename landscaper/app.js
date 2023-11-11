@@ -3,16 +3,32 @@ console.log("noop noop");
 const landscaper = {
   name: "userName",
   money: 0,
-  tools: [],
+  tool: 0,
 };
-console.log(landscaper.name);
-//landscaper.name = prompt("What's your name?");
-console.log(landscaper.name);
-console.log(landscaper.tools);
+
+const tools = [
+  { name: "Teeth", cost: 0, generates: 1 },
+  { name: "Rusty Scissors", cost: 5, generates: 5 },
+  { name: "Old-timey Push Lawnmower", cost: 25, generates: 50 },
+  { name: "Fancy Battery-Powered Lawnmower", cost: 250, generates: 100 },
+  { name: "Team of Starving Students", cost: 500, generates: 250 },
+];
+
+const tool = tools[landscaper.tool];
+
 // cut lawns with teeth = +1
 const cutWithTeeth = () => {
-  landscaper.money += 1;
+  landscaper.money += tool.generates;
 };
+
+cutWithTeeth();
+cutWithTeeth();
+cutWithTeeth();
+cutWithTeeth();
+cutWithTeeth();
+cutWithTeeth();
+cutWithTeeth();
+cutWithTeeth();
 console.log(landscaper.money);
 
 // rusty scissors = -5
