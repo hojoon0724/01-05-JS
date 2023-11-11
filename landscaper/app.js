@@ -3,7 +3,7 @@ console.log("noop noop");
 // landscaper stats
 const landscaper = {
   name: "userName",
-  money: 4,
+  money: 0,
   tool: 0,
 };
 
@@ -25,6 +25,7 @@ function cutGrass() {
   alert(
     `You cut some grass and made $${tool.generates}. You have $${landscaper.money}.`
   );
+  askNext();
 }
 //TODO: REDUCE
 // function to buy scissors
@@ -74,23 +75,25 @@ function buyTeam() {
 
 // * Game mechanics
 //!alert(`You're now a landscaper. The better the tools, the more you'll earn`);
-let answer = 0;
-//answer = prompt("Let's [c]ut some grass. Or [u]pgrade");
+let answer = "c";
 
-function nextAction() {
+function askNext() {
+  if (landscaper.money >= tools[1]) {
+    answer = prompt(
+      `You have enough to upgrade to ${tools[1].name}. Do you want to upgrade?, yes / no`
+    );
+  } else answer = prompt(`Let's [c]ut some grass. Or [u]pgrade`);
   if (answer == "c") {
     cutGrass();
   } else if (answer == "u") {
-    buyScissors();
+    console.log("upgrade");
   } else {
-    alert(`Dude, you got no other choice`);
+    alert(`dude, just pick one from your options`);
+    askNext();
   }
 }
 
-while (landscaper.money > 1000) {
-  nextAction();
-}
-
+askNext();
 console.log(answer);
 
 // win the game when you have a team of starving students and 1000
