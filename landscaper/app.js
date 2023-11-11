@@ -1,11 +1,13 @@
 console.log("noop noop");
-// start
+
+// landscaper stats
 const landscaper = {
   name: "userName",
-  money: 0,
+  money: 4,
   tool: 0,
 };
 
+// tools stats
 const tools = [
   { name: "Teeth", cost: 0, generates: 1 },
   { name: "Rusty Scissors", cost: 5, generates: 5 },
@@ -14,38 +16,30 @@ const tools = [
   { name: "Team of Starving Students", cost: 500, generates: 250 },
 ];
 
+// current tool
 const tool = tools[landscaper.tool];
 
-// cut lawns with teeth = +1
-const cutWithTeeth = () => {
+// function to cut grass
+function cutGrass() {
   landscaper.money += tool.generates;
-};
+  alert(
+    `You cut some grass and made $${tool.generates}. You have $${landscaper.money}.`
+  );
+}
 
-cutWithTeeth();
-cutWithTeeth();
-cutWithTeeth();
-cutWithTeeth();
-cutWithTeeth();
-cutWithTeeth();
-cutWithTeeth();
-cutWithTeeth();
+// function to buy scissors
+function buyScissors() {
+  if (landscaper.money < tools[1].cost) {
+    alert(
+      `You have $${landscaper.money} but ${tools[1].name} costs $${tools[1].cost}`
+    );
+  } else {
+    landscaper.tool = tools[1];
+    landscaper.money -= landscaper.tool.cost;
+  }
+}
+
+buyScissors();
 console.log(landscaper.money);
-
-// rusty scissors = -5
-
-// cut lawns with rusty scissors = +5
-
-// old-timey push lawnmower = -25
-
-// cut lawns with old-timey push lawnmower = +50
-
-// buy fancy battery-powered lawnmower = -250
-
-// cut lawns with battery-powered lawnmower = $100
-
-// hire a team of starving students = -500
-
-// cut lawns with a team of starving students = +250
-
 // win the game when you have a team of starving students and 1000
 // say that they won the game
