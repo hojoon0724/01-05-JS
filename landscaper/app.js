@@ -26,20 +26,72 @@ function cutGrass() {
     `You cut some grass and made $${tool.generates}. You have $${landscaper.money}.`
   );
 }
-
+//TODO: REDUCE
 // function to buy scissors
 function buyScissors() {
-  if (landscaper.money < tools[1].cost) {
-    alert(
-      `You have $${landscaper.money} but ${tools[1].name} costs $${tools[1].cost}`
-    );
+  const item = tools[1];
+  if (landscaper.money < item.cost) {
+    alert(`You have $${landscaper.money} but ${item.name} costs $${item.cost}`);
   } else {
-    landscaper.tool = tools[1];
+    landscaper.tool = item;
     landscaper.money -= landscaper.tool.cost;
   }
 }
 
-buyScissors();
-console.log(landscaper.money);
+// function to buy push lawnmower
+function buyPushLawnmower() {
+  const item = tools[2];
+  if (landscaper.money < item.cost) {
+    alert(`You have $${landscaper.money} but ${item.name} costs $${item.cost}`);
+  } else {
+    landscaper.tool = item;
+    landscaper.money -= landscaper.tool.cost;
+  }
+}
+
+// function to buy lawnmower
+function buyBatteryLawnmower() {
+  const item = tools[3];
+  if (landscaper.money < item.cost) {
+    alert(`You have $${landscaper.money} but ${item.name} costs $${item.cost}`);
+  } else {
+    landscaper.tool = item;
+    landscaper.money -= landscaper.tool.cost;
+  }
+}
+
+// buy team
+function buyTeam() {
+  const item = tools[4];
+  if (landscaper.money < item.cost) {
+    alert(`You have $${landscaper.money} but ${item.name} costs $${item.cost}`);
+  } else {
+    landscaper.tool = item;
+    landscaper.money -= landscaper.tool.cost;
+  }
+}
+//TODO: REDUCE
+
+// * Game mechanics
+//!alert(`You're now a landscaper. The better the tools, the more you'll earn`);
+let answer = 0;
+//answer = prompt("Let's [c]ut some grass. Or [u]pgrade");
+
+function nextAction() {
+  if (answer == "c") {
+    cutGrass();
+  } else if (answer == "u") {
+    buyScissors();
+  } else {
+    alert(`Dude, you got no other choice`);
+  }
+}
+
+while (landscaper.money > 1000) {
+  nextAction();
+}
+
+console.log(answer);
+
 // win the game when you have a team of starving students and 1000
 // say that they won the game
