@@ -9,6 +9,44 @@ const tools = [
 
 const landscaper = {
   name: "",
-  money: 0,
-  toolbox: "",
+  money: 3,
 };
+
+const toolbox = [];
+
+toolbox.push(tools[0]);
+
+function cutGrass() {
+  landscaper.money += toolbox[toolbox.length - 1].generates;
+}
+
+cutGrass();
+cutGrass();
+console.log(landscaper.money);
+
+function checkUpgrade() {
+  if (landscaper.money > tools[toolbox.length].cost) {
+    youCanUpgrade();
+  } else {
+    notEnoughMoney();
+  }
+}
+
+function askUpgrade() {
+  console.log("want to upgrade?");
+}
+
+function upgrade() {
+  toolbox.push(tools[toolbox.length]);
+}
+
+function youCanUpgrade() {
+  const upgradeMessage = `You have enough money to upgrade to ${tools[toolbox.length].name}.`;
+  console.log(upgradeMessage);
+}
+
+function notEnoughMoney() {
+  console.log("you need more money");
+}
+
+youCanUpgrade();
