@@ -17,14 +17,6 @@ toolbox.push(tools[0]);
 let currentTool = toolbox[toolbox.length - 1];
 let nextItem = tools[toolbox.length];
 
-console.log(currentTool);
-console.log(nextItem);
-
-upgrade();
-
-console.log(currentTool);
-console.log(nextItem);
-
 //* process functions
 function checkUpgrade() {
   if (landscaper.money >= tools[toolbox.length].cost) {
@@ -65,6 +57,17 @@ function askUpgrade() {
 
 function cutGrass() {
   landscaper.money += toolbox[toolbox.length - 1].generates;
+  console.log("pressed");
 }
+
+//* insert to HTML
+function updateHTML() {
+  document.getElementById("money").innerHTML = `${landscaper.money}`;
+}
+
+document.querySelector("#work").onclick = function () {
+  cutGrass();
+  updateHTML();
+};
 
 youCanUpgrade();
