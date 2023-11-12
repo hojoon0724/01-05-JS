@@ -9,44 +9,62 @@ const tools = [
 
 const landscaper = {
   name: "",
-  money: 3,
+  money: 20,
 };
 
 const toolbox = [];
-
 toolbox.push(tools[0]);
+let currentTool = toolbox[toolbox.length - 1];
+let nextItem = tools[toolbox.length];
 
-function cutGrass() {
-  landscaper.money += toolbox[toolbox.length - 1].generates;
-}
+console.log(currentTool);
+console.log(nextItem);
 
-cutGrass();
-cutGrass();
-console.log(landscaper.money);
+upgrade();
 
+console.log(currentTool);
+console.log(nextItem);
+
+//* process functions
 function checkUpgrade() {
-  if (landscaper.money > tools[toolbox.length].cost) {
+  if (landscaper.money >= tools[toolbox.length].cost) {
     youCanUpgrade();
   } else {
     notEnoughMoney();
   }
 }
 
+function upgrade() {
+  toolbox.push(tools[toolbox.length]);
+  currentTool = toolbox[toolbox.length - 1];
+  nextItem = tools[toolbox.length];
+}
+
+//* message functions
+function youCanUpgrade() {
+  const message = `You have enough money to upgrade to ${tools[toolbox.length].name}.`;
+  console.log(message);
+}
+
+function notEnoughMoney() {
+  const message = `You don't have enough money to upgrade. You need ${tools[toolbox.length].cost} to buy the ${
+    tools[toolbox.length].name
+  }`;
+  console.log(message);
+}
+
+function noMoreUpgrades() {
+  const message = `There are no more upgrades`;
+  console.log(message);
+}
+
+//! action functions
 function askUpgrade() {
   console.log("want to upgrade?");
 }
 
-function upgrade() {
-  toolbox.push(tools[toolbox.length]);
-}
-
-function youCanUpgrade() {
-  const upgradeMessage = `You have enough money to upgrade to ${tools[toolbox.length].name}.`;
-  console.log(upgradeMessage);
-}
-
-function notEnoughMoney() {
-  console.log("you need more money");
+function cutGrass() {
+  landscaper.money += toolbox[toolbox.length - 1].generates;
 }
 
 youCanUpgrade();
