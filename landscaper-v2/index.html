@@ -5,11 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landscaper</title>
-    <script src="app.js">    </script>
+
     <style>
+        :root {
+            --green1: #d2e7d2;
+            --green2: #a5d0a5;
+            --green3: #77b877;
+            --green4: #4aa14a;
+            --green5: #1d891d;
+            --green6: #166716;
+            --green7: #0f450f;
+            --green8: #072207;
+            --green9: #001800;
+        }
+
         body {
-            background-color: #242424;
-            color: #e1e1e1;
+            background-color: var(--green8);
+            color: var(--green1);
             margin: 0px;
             font-family: 'Courier New', Courier, monospace;
         }
@@ -19,69 +31,148 @@
         }
         */
 
+        button {
+            background-color: var(--green9);
+            padding: .5rem 2rem;
+            font-size: 1rem;
+            color: var(--green2);
+            border: 1px solid var(--green5);
+            border-radius: 6px;
+        }
+
+        .top-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
         .main-container {
             height: 100vh;
+            max-height: 700px;
             width: 100vw;
+            max-width: 800px;
             display: flex;
-            justify-content: space-around;
+            flex-direction: column;
+            justify-content: space-between;
+            box-sizing: border-box;
+            padding: 4em;
+            margin: auto;
         }
 
         .top-bar {
             width: 100%;
-            height: 100vh;
+            height: auto;
             display: flex;
             justify-content: space-between;
             flex-direction: row;
             /* border: 1px solid red; */
+            padding: 2em 4em;
+            box-sizing: border-box;
+            background-color: var(--green7);
+            border-bottom: 2px solid var(--green2);
         }
 
         .stats {
-            font-size: 5vh;
-            margin: auto;
-            width: 25%;
-            padding-left: 1vw;
+            font-size: 1.3rem;
+            /* margin: auto; */
+            width: 100%;
+            display: flex;
+            /* border: 1px solid red; */
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
         }
 
         .title-box {
-            width: 50%;
-            font-size: 3rem;
-            color: #e1e1e1;
-            font-family: 'Courier New', Courier, monospace;
+            font-size: 2rem;
+            color: var(--green1) font-family: 'Courier New', Courier, monospace;
             margin: auto;
         }
 
-        .time {
-            width: 25%
+        .money {
+            background-color: var(--green5);
+        }
+
+        .tools {
+            border: 1px solid var(--green3);
+        }
+
+        .message-box-container {
+            border: 1px solid var(--green3);
+            text-align: center;
+            height: 40vh;
+            /* margin: auto; */
         }
 
         p {
             font-size: 1rem;
             text-align: center;
         }
+
+        .buttons-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
     </style>
 </head>
 
 <body>
-    <div class="main-container">
+    <div class="top-container">
         <div class="top-bar">
+            <div class="title-box">
+                Landscaper
+            </div>
+        </div>
+        <div class="main-container">
+
             <div class="stats">
-                <div class="money" id="money">
-                    money
+                <div class="current-tool">
+                    <div class="tool teeth">
+                        teeth
+                    </div>
+                    <div class="tool teeth">
+                        Rusty Scissors
+                    </div>
+                    <div class="tool teeth">
+                        teeth
+                    </div>
+                    <div class="tool teeth">
+                        teeth
+                    </div>
+                    <div class="tool teeth">
+                        teeth
+                    </div>
                 </div>
             </div>
-            <div class="title-box">
-                <center>Landscaper</center>
-                <p>That's it. I don't have any post-credit scenes.</p>
+
+
+            <div class="message-box-container">
+                <div class="message-box">
+                    ze message
+                </div>
             </div>
-            <div class="time">
-                &nbsp;
+
+            <div class="stats">
+                <div class="money" id="money">
+                    ze money
+                </div>
+            </div>
+
+            <div class="buttons-container">
+                <button class="work" id="work">
+                    work yo
+                </button>
+                <button class="upgrade" id="upgrade">
+                    upgrade
+                </button>
             </div>
         </div>
     </div>
 </body>
 
-<script>
-    document.getElementById(".money").innerHTML = "New text!";
+<script src="app.js">
+
 </script>
 
 </html>

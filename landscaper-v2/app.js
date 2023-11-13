@@ -62,7 +62,7 @@ function cutGrass() {
 
 //* insert to HTML
 function updateHTML() {
-  document.getElementById("money").innerHTML = `${landscaper.money}`;
+  document.getElementById("money").innerHTML = `$${landscaper.money}`;
 }
 
 document.querySelector("#work").onclick = function () {
