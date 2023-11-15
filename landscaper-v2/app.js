@@ -9,7 +9,7 @@ const tools = [
 
 const landscaper = {
   name: "",
-  money: 1030,
+  money: 0,
 };
 
 const toolbox = [];
@@ -99,10 +99,11 @@ function checkWin() {
 }
 
 function winGame() {
-  message = `You win` + landscaper.money + currentTool.level;
+  message = `You win!`;
   updateMessage();
   updateHTML();
-  document.getElementById("bottom").style.opacity = 0;
+  document.getElementById("work").style.opacity = 0;
+  document.getElementById("upgrade").style.opacity = 0;
 }
 
 document.querySelector("#work").onclick = function () {
