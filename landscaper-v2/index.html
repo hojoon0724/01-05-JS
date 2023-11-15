@@ -11,15 +11,18 @@
 
     <style>
         :root {
-            --green1: #d2e7d2;
-            --green2: #a5d0a5;
-            --green3: #77b877;
-            --green4: #4aa14a;
-            --green5: #1d891d;
-            --green6: #166716;
-            --green7: #0f450f;
-            --green8: #072207;
-            --green9: #001800;
+            --sky: #77c4ff;
+            --green1: #edfad4;
+            --green2: #cff38d;
+            --green3: #b0eb47;
+            --green4: #92e400;
+            --green5: #6bc60a;
+            --green6: #44a713;
+            --green7: #1d891d;
+            --green8: #156315;
+            --green9: #0d3d0d;
+            --green10: #051705;
+            --ground: #7c5236;
         }
 
         body {
@@ -50,7 +53,7 @@
             flex-direction: column;
             background-image: url(/landscaper-v2/SVG/---background.svg);
             background-repeat: repeat-x;
-            background-position: 50% 50%;
+            background-position: 50% 60%;
             background-size: min(500px, 50vh);
         }
 
@@ -165,8 +168,8 @@
         .tool {
             width: 19%;
             font-size: 1rem;
-            background-color: var(--green5);
-            border: 0px solid var(--green4);
+            background-color: var(--green7);
+            border: 4px solid var(--green10);
             box-sizing: border-box;
             border-collapse: collapse;
             padding: 8px;
@@ -203,7 +206,7 @@
             display: flex;
             flex-direction: row-reverse;
             justify-content: space-between;
-            height: 8vh;
+            height: 3rem;
         }
 
         .money-container {
@@ -285,7 +288,7 @@
 
 
             <div class="message-box-container">
-                <div class="message-box">
+                <div class="message-box" id="message-box">
                     ze message
                 </div>
             </div>
