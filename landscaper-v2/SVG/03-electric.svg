@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-2ac44a86-36d2-4ffc-8a8e-c2cb87922a44" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .uuid-d7a061b9-ac7b-4110-99d5-bad6b38974ca {
+        fill: none;
+      }
+
+      .uuid-d7a061b9-ac7b-4110-99d5-bad6b38974ca, .uuid-65e83a86-7f27-4663-8fe6-1a27c9f3504d, .uuid-c62ea9b8-b7ba-4497-9da0-c0e2c84bd9f7, .uuid-f79d3810-636a-4873-8ffd-c6d442f0040e, .uuid-a61f8c76-c6b2-4b3d-9b18-261256ccf0c0, .uuid-d646ac55-85f2-44da-b9cc-2665dcab42f6, .uuid-50a501fb-76c7-4c05-869a-723ff4352ce0, .uuid-b98ae042-2546-4c76-b683-76f2e7910d86 {
+        stroke-width: 0px;
+      }
+
+      .uuid-65e83a86-7f27-4663-8fe6-1a27c9f3504d {
+        fill: #1b1b1b;
+      }
+
+      .uuid-c62ea9b8-b7ba-4497-9da0-c0e2c84bd9f7 {
+        fill: #ca3327;
+      }
+
+      .uuid-f79d3810-636a-4873-8ffd-c6d442f0040e {
+        fill: #dfdfe0;
+      }
+
+      .uuid-a61f8c76-c6b2-4b3d-9b18-261256ccf0c0 {
+        fill: #e0bd90;
+      }
+
+      .uuid-d646ac55-85f2-44da-b9cc-2665dcab42f6 {
+        fill: #bfc0c0;
+      }
+
+      .uuid-50a501fb-76c7-4c05-869a-723ff4352ce0 {
+        fill: #8c8e8f;
+      }
+
+      .uuid-b98ae042-2546-4c76-b683-76f2e7910d86 {
+        fill: #e3af1b;
+      }
+    </style>
+  </defs>
+  <g id="uuid-33894f81-c6e1-40bc-96ba-701e8b67346f" data-name="Layer 2">
+    <polygon class="uuid-a61f8c76-c6b2-4b3d-9b18-261256ccf0c0" points="19 4 17 4 15 4 11 4 11 10 17 10 17 8 19 8 19 4"/>
+    <rect class="uuid-a61f8c76-c6b2-4b3d-9b18-261256ccf0c0" x="16" y="11" width="5" height="2"/>
+    <polygon class="uuid-65e83a86-7f27-4663-8fe6-1a27c9f3504d" points="19 1 10 1 10 2 9 2 9 7 12 7 12 4 19 4 19 1"/>
+    <rect class="uuid-65e83a86-7f27-4663-8fe6-1a27c9f3504d" x="18" y="29" width="3" height="2"/>
+    <rect class="uuid-65e83a86-7f27-4663-8fe6-1a27c9f3504d" x="15.5" y="26.5" width="3" height="2" transform="translate(44.5 10.5) rotate(90)"/>
+    <rect class="uuid-65e83a86-7f27-4663-8fe6-1a27c9f3504d" x="20.5" y="26.5" width="3" height="2" transform="translate(49.5 5.5) rotate(90)"/>
+    <polygon class="uuid-c62ea9b8-b7ba-4497-9da0-c0e2c84bd9f7" points="27 21 27 17 8 17 8 15 8 12 4 12 4 15 1 15 1 20 4 20 4 21 8 21 8 22 10 22 10 24 11 24 11 26 26 26 26 24 29 24 29 21 27 21"/>
+    <rect class="uuid-b98ae042-2546-4c76-b683-76f2e7910d86" x="17" y="14" width="4" height="3"/>
+    <rect class="uuid-65e83a86-7f27-4663-8fe6-1a27c9f3504d" x="21" y="13" width="3" height="4"/>
+    <polygon class="uuid-d646ac55-85f2-44da-b9cc-2665dcab42f6" points="16 14 16 10 8 10 8 14 8 17 11 17 11 14 14 14 14 17 17 17 17 14 16 14"/>
+    <rect class="uuid-65e83a86-7f27-4663-8fe6-1a27c9f3504d" x="18" y="24" width="3" height="2"/>
+    <rect class="uuid-65e83a86-7f27-4663-8fe6-1a27c9f3504d" x="26" y="29" width="3" height="2"/>
+    <rect class="uuid-65e83a86-7f27-4663-8fe6-1a27c9f3504d" x="23.5" y="26.5" width="3" height="2" transform="translate(52.5 2.5) rotate(90)"/>
+    <rect class="uuid-65e83a86-7f27-4663-8fe6-1a27c9f3504d" x="28.5" y="26.5" width="3" height="2" transform="translate(57.5 -2.5) rotate(90)"/>
+    <rect class="uuid-65e83a86-7f27-4663-8fe6-1a27c9f3504d" x="26" y="24" width="3" height="2"/>
+    <rect class="uuid-50a501fb-76c7-4c05-869a-723ff4352ce0" x="18" y="26" width="3" height="3"/>
+    <rect class="uuid-50a501fb-76c7-4c05-869a-723ff4352ce0" x="26" y="26" width="3" height="3"/>
+    <rect class="uuid-f79d3810-636a-4873-8ffd-c6d442f0040e" x="19" y="27" width="1" height="1"/>
+    <rect class="uuid-f79d3810-636a-4873-8ffd-c6d442f0040e" x="27" y="27" width="1" height="1"/>
+    <polygon class="uuid-50a501fb-76c7-4c05-869a-723ff4352ce0" points="9 24 9 28 8 28 8 29 4 29 4 28 3 28 3 24 4 24 4 23 8 23 8 24 9 24"/>
+    <path class="uuid-65e83a86-7f27-4663-8fe6-1a27c9f3504d" d="m10,24v-2h-2v-1h-4v1h-2v2h-1v4h1v2h2v1h4v-1h2v-2h1v-4h-1Zm-1,4h-1v1h-4v-1h-1v-4h1v-1h4v1h1v4Z"/>
+    <rect class="uuid-f79d3810-636a-4873-8ffd-c6d442f0040e" x="5" y="25" width="2" height="2"/>
+    <rect class="uuid-50a501fb-76c7-4c05-869a-723ff4352ce0" x="17" y="5" width="1" height="1"/>
+    <rect class="uuid-f79d3810-636a-4873-8ffd-c6d442f0040e" x="11" y="14" width="3" height="3"/>
+    <rect class="uuid-d7a061b9-ac7b-4110-99d5-bad6b38974ca" width="32" height="32"/>
+  </g>
+</svg>

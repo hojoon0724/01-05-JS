@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landscaper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -23,7 +26,7 @@
             background-color: var(--green8);
             color: var(--green1);
             margin: 0px;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'VT323', monospace;
         }
 
         /* div {
@@ -34,28 +37,33 @@
         button {
             background-color: var(--green9);
             padding: .5rem 2rem;
-            font-size: 1rem;
+            font-size: .7rem;
             color: var(--green2);
             border: 1px solid var(--green5);
             border-radius: 6px;
+            font-family: 'Press Start 2P', monospace;
         }
 
         .top-container {
             height: 100vh;
             display: flex;
             flex-direction: column;
+            background-image: url(/landscaper-v2/SVG/---background.svg);
+            background-repeat: repeat-x;
+            background-position: 50% 50%;
+            background-size: min(500px, 50vh);
         }
 
         .main-container {
             height: 100vh;
-            max-height: 700px;
+            /* max-height: 700px; */
             width: 100vw;
             max-width: 800px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             box-sizing: border-box;
-            padding: 4em;
+            padding: 2em;
             margin: auto;
         }
 
@@ -66,7 +74,7 @@
             justify-content: space-between;
             flex-direction: row;
             /* border: 1px solid red; */
-            padding: 2em 4em;
+            padding: 1em 2em;
             box-sizing: border-box;
             background-color: var(--green7);
             border-bottom: 2px solid var(--green2);
@@ -84,24 +92,63 @@
         }
 
         .title-box {
-            font-size: 2rem;
-            color: var(--green1) font-family: 'Courier New', Courier, monospace;
+            font-size: 1.8rem;
+            color: var(--green1);
+            font-family: 'Press Start 2P', monospace;
             margin: auto;
         }
 
         .money {
-            background-color: var(--green5);
+            margin: 0 auto;
         }
 
         .tools {
             border: 1px solid var(--green3);
         }
 
+        .lawn-background {
+            z-index: -1;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+        }
+
+        .sky,
+        .ground {
+            width: 100%;
+            height: 50%;
+            z-index: -2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sky {
+            background-color: #78C4FF;
+        }
+
+        .ground {
+            background-color: #7C5236;
+        }
+
         .message-box-container {
-            border: 1px solid var(--green3);
+            border: 0px solid var(--green3);
             text-align: center;
             height: 40vh;
-            /* margin: auto; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 1rem 0rem;
+        }
+
+        .message-box {
+            background-color: var(--green7);
+            display: inline;
+            width: auto;
+            margin: auto;
+            padding: 1ch 3ch;
+            border: 0px solid var(--green7);
         }
 
         p {
@@ -109,10 +156,64 @@
             text-align: center;
         }
 
+        .toolbox {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .tool {
+            width: 19%;
+            font-size: 1rem;
+            background-color: var(--green5);
+            border: 0px solid var(--green4);
+            box-sizing: border-box;
+            border-collapse: collapse;
+            padding: 8px;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: space-between;
+            border-radius: 6px;
+            /* margin: 3px; */
+        }
+
+        .tool-icon {
+            padding: 10px;
+        }
+
+
+        .tool-name {
+            color: var(--green1)
+        }
+
         .buttons-container {
             display: flex;
             flex-direction: row;
-            justify-content: space-evenly;
+            justify-content: flex-start;
+            width: min(400px, 50%);
+        }
+
+        .work,
+        .upgrade,
+        .reset {
+            margin-right: 10px;
+        }
+
+        .bottom-block-container {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            height: 8vh;
+        }
+
+        .money-container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            background-color: var(--green5);
+            padding: 0 30px;
+            width: max(25%);
+            font-family: 'Press Start 2P', monospace;
         }
     </style>
 </head>
@@ -124,24 +225,60 @@
                 Landscaper
             </div>
         </div>
+        <div class="lawn-background">
+            <div class="sky">
+                &nbsp;
+            </div>
+
+            <div class="ground">
+                &nbsp;
+            </div>
+        </div>
         <div class="main-container">
 
             <div class="stats">
-                <div class="current-tool">
+                <div class="toolbox">
                     <div class="tool teeth">
-                        teeth
+                        <div class="tool-icon">
+                            <img src="/landscaper-v2/SVG/00-teeth.svg">
+                        </div>
+                        <div class="tool-name">
+                            Teeth
+                        </div>
                     </div>
-                    <div class="tool teeth">
-                        Rusty Scissors
+                    <div class="tool scissor">
+                        <div class="tool-icon">
+                            <img src="/landscaper-v2/SVG/01-scissors.svg">
+                        </div>
+                        <div class="tool-name">
+                            Rusty Scissors
+                        </div>
                     </div>
-                    <div class="tool teeth">
-                        teeth
+
+                    <div class="tool push">
+                        <div class="tool-icon">
+                            <img src="/landscaper-v2/SVG/02-push.svg">
+                        </div>
+                        <div class="tool-name">
+                            Manual Lawnmower
+                        </div>
                     </div>
-                    <div class="tool teeth">
-                        teeth
+                    <div class="tool electric">
+                        <div class="tool-icon">
+                            <img src="/landscaper-v2/SVG/03-electric.svg">
+                        </div>
+                        <div class="tool-name">
+                            Electric
+                            Lawnmower
+                        </div>
                     </div>
-                    <div class="tool teeth">
-                        teeth
+                    <div class="tool team">
+                        <div class="tool-icon">
+                            <img src="/landscaper-v2/SVG/04-team.svg">
+                        </div>
+                        <div class="tool-name">
+                            Team of Workers
+                        </div>
                     </div>
                 </div>
             </div>
@@ -153,19 +290,21 @@
                 </div>
             </div>
 
-            <div class="stats">
-                <div class="money" id="money">
-                    ze money
+            <div class="bottom-block-container">
+                <div class="money-container">
+                    <div class="money" id="money">
+                        ze money
+                    </div>
                 </div>
-            </div>
 
-            <div class="buttons-container">
-                <button class="work" id="work">
-                    work yo
-                </button>
-                <button class="upgrade" id="upgrade">
-                    upgrade
-                </button>
+                <div class="buttons-container">
+                    <button class="work" id="work">
+                        work yo
+                    </button>
+                    <button class="upgrade" id="upgrade">
+                        upgrade
+                    </button>
+                </div>
             </div>
         </div>
     </div>

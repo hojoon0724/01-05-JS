@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-0aaf731f-3ee4-435f-afec-8252aca83500" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .uuid-f5ff3ba2-2a82-4f73-a7fe-ec56b6ec6128 {
+        fill: none;
+      }
+
+      .uuid-f5ff3ba2-2a82-4f73-a7fe-ec56b6ec6128, .uuid-05af7b34-1baa-4cda-90d0-c6df383dc9bd, .uuid-3bd31c96-34cb-4d01-b26d-72421523089d, .uuid-9541c345-e25c-4200-a295-29703bf3f0f7, .uuid-730d09e4-27ad-484c-8273-595ffe6df4c6, .uuid-f0cb9df4-c1d7-4060-93b8-272cb1552cf7 {
+        stroke-width: 0px;
+      }
+
+      .uuid-05af7b34-1baa-4cda-90d0-c6df383dc9bd {
+        fill: #1b1b1b;
+      }
+
+      .uuid-3bd31c96-34cb-4d01-b26d-72421523089d {
+        fill: #ca3327;
+      }
+
+      .uuid-9541c345-e25c-4200-a295-29703bf3f0f7 {
+        fill: #dfdfe0;
+      }
+
+      .uuid-730d09e4-27ad-484c-8273-595ffe6df4c6 {
+        fill: #e0bd90;
+      }
+
+      .uuid-f0cb9df4-c1d7-4060-93b8-272cb1552cf7 {
+        fill: #8c8e8f;
+      }
+    </style>
+  </defs>
+  <g id="uuid-ae0dca39-aa32-4f8a-ae24-434629b5eff4" data-name="Layer 2">
+    <rect class="uuid-05af7b34-1baa-4cda-90d0-c6df383dc9bd" x="2" y="7" width="28" height="9"/>
+    <polygon class="uuid-730d09e4-27ad-484c-8273-595ffe6df4c6" points="3 12 3 30 4 30 4 31 28 31 28 30 29 30 29 12 3 12"/>
+    <rect class="uuid-05af7b34-1baa-4cda-90d0-c6df383dc9bd" x="8" y="1" width="16" height="8"/>
+    <rect class="uuid-3bd31c96-34cb-4d01-b26d-72421523089d" x="4" y="17" width="24" height="12"/>
+    <rect class="uuid-f0cb9df4-c1d7-4060-93b8-272cb1552cf7" x="15" y="13" width="2" height="2"/>
+    <rect class="uuid-3bd31c96-34cb-4d01-b26d-72421523089d" x="5" y="16" width="22" height="14"/>
+    <rect class="uuid-9541c345-e25c-4200-a295-29703bf3f0f7" x="5" y="17" width="4" height="4"/>
+    <rect class="uuid-9541c345-e25c-4200-a295-29703bf3f0f7" x="11" y="17" width="4" height="4"/>
+    <rect class="uuid-9541c345-e25c-4200-a295-29703bf3f0f7" x="17" y="17" width="4" height="4"/>
+    <rect class="uuid-9541c345-e25c-4200-a295-29703bf3f0f7" x="23" y="17" width="4" height="4"/>
+    <rect class="uuid-9541c345-e25c-4200-a295-29703bf3f0f7" x="5" y="24" width="4" height="4"/>
+    <rect class="uuid-9541c345-e25c-4200-a295-29703bf3f0f7" x="11" y="24" width="4" height="4"/>
+    <rect class="uuid-9541c345-e25c-4200-a295-29703bf3f0f7" x="17" y="24" width="4" height="4"/>
+    <rect class="uuid-9541c345-e25c-4200-a295-29703bf3f0f7" x="23" y="24" width="4" height="4"/>
+    <rect class="uuid-730d09e4-27ad-484c-8273-595ffe6df4c6" x="5" y="9" width="22" height="3"/>
+    <rect class="uuid-05af7b34-1baa-4cda-90d0-c6df383dc9bd" x="10" y="11" width="1" height="1"/>
+    <rect class="uuid-05af7b34-1baa-4cda-90d0-c6df383dc9bd" x="21" y="11" width="1" height="1"/>
+    <rect class="uuid-3bd31c96-34cb-4d01-b26d-72421523089d" x="7" y="20" width="2" height="1"/>
+    <rect class="uuid-3bd31c96-34cb-4d01-b26d-72421523089d" x="18" y="20" width="1" height="1"/>
+    <rect class="uuid-3bd31c96-34cb-4d01-b26d-72421523089d" x="23" y="20" width="1" height="2"/>
+    <rect class="uuid-3bd31c96-34cb-4d01-b26d-72421523089d" x="6" y="24" width="1" height="1"/>
+    <rect class="uuid-3bd31c96-34cb-4d01-b26d-72421523089d" x="12" y="24" width="2" height="1"/>
+    <rect class="uuid-3bd31c96-34cb-4d01-b26d-72421523089d" x="19" y="23" width="3" height="2"/>
+    <rect class="uuid-3bd31c96-34cb-4d01-b26d-72421523089d" x="26" y="24" width="1" height="1"/>
+    <rect class="uuid-3bd31c96-34cb-4d01-b26d-72421523089d" x="23" y="23" width="1" height="2"/>
+    <rect class="uuid-05af7b34-1baa-4cda-90d0-c6df383dc9bd" x="5" y="3" width="22" height="6"/>
+    <rect class="uuid-05af7b34-1baa-4cda-90d0-c6df383dc9bd" x="3" y="5" width="26" height="4"/>
+    <rect class="uuid-3bd31c96-34cb-4d01-b26d-72421523089d" x="13" y="20" width="2" height="2"/>
+    <rect class="uuid-f5ff3ba2-2a82-4f73-a7fe-ec56b6ec6128" width="32" height="32"/>
+  </g>
+</svg>
