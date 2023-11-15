@@ -4,12 +4,12 @@ const tools = [
   { level: 2, name: "Old-timey Push Lawnmower", cost: 25, generates: 50, css: "push" },
   { level: 3, name: "Fancy Battery-Powered Lawnmower", cost: 250, generates: 100, css: "electric" },
   { level: 4, name: "Team of Starving Students", cost: 500, generates: 250, css: "team" },
-  { level: 5, name: "No more upgrades", cost: 20000, generates: 250 },
+  { level: 5, name: "No more upgrades" },
 ];
 
 const landscaper = {
   name: "",
-  money: 0,
+  money: 1030,
 };
 
 const toolbox = [];
@@ -17,6 +17,7 @@ toolbox.push(tools[0]);
 let currentTool = toolbox[toolbox.length - 1];
 let nextItem = tools[toolbox.length];
 let message = ``;
+let solidTool = currentTool.css;
 
 //* process functions
 function checkUpgrade() {
@@ -26,7 +27,9 @@ function checkUpgrade() {
 }
 
 function upgrade() {
-  if (landscaper.money >= nextItem.cost) {
+  if (currentTool.level >= 4) {
+    message = `There are no more upgrades`;
+  } else if (landscaper.money >= nextItem.cost) {
     toolbox.push(tools[toolbox.length]);
     landscaper.money -= nextItem.cost;
     message = `You spent ${nextItem.cost} to upgrade to ${nextItem.name}.`;
@@ -39,8 +42,10 @@ function upgrade() {
 
 //* message functions
 function youCanUpgrade() {
-  message = message + ` You have enough money to upgrade to ${tools[toolbox.length].name}.`;
-  console.log(message);
+  if (currentTool.level < 4) {
+    message = message + ` You have enough money to upgrade to ${tools[toolbox.length].name}.`;
+    console.log(message);
+  }
 }
 
 function notEnoughMoney() {
@@ -75,18 +80,44 @@ function updateMessage() {
   document.getElementById("message-box").innerHTML = `${message}`;
 }
 
+function toolCSS() {
+  activeDiv = currentTool.css;
+  document.getElementById(activeDiv).style.opacity = 1;
+}
+
+function upgradedToolCSS() {
+  inactiveDiv = toolbox[toolbox.length - 2].css;
+  document.getElementById(inactiveDiv).style.opacity = 0.5;
+  activeDiv = currentTool.css;
+  document.getElementById(activeDiv).style.opacity = 1;
+}
+
+function checkWin() {
+  if (landscaper.money >= 1000 && currentTool.level == 4) {
+    winGame();
+  }
+}
+
+function winGame() {
+  message = `You win` + landscaper.money + currentTool.level;
+  updateMessage();
+  updateHTML();
+  document.getElementById("bottom").style.opacity = 0;
+}
+
 document.querySelector("#work").onclick = function () {
   cutGrass();
   checkUpgrade();
   updateMessage();
   updateHTML();
+  toolCSS();
+  checkWin();
 };
 
 document.querySelector("#upgrade").onclick = function () {
   upgrade();
   updateMessage();
   updateHTML();
+  upgradedToolCSS();
+  checkWin();
 };
-
-cutGrass();
-youCanUpgrade();

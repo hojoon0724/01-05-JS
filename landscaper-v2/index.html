@@ -103,6 +103,7 @@
 
         .money {
             margin: 0 auto;
+            color: var(--green10)
         }
 
         .tools {
@@ -152,6 +153,8 @@
             margin: auto;
             padding: 1ch 3ch;
             border: 0px solid var(--green7);
+            font-size: 1.5rem;
+            transition: 1s ease-in-out;
         }
 
         p {
@@ -177,6 +180,7 @@
             flex-direction: column-reverse;
             justify-content: space-between;
             border-radius: 6px;
+            opacity: .5;
             /* margin: 3px; */
         }
 
@@ -241,7 +245,7 @@
 
             <div class="stats">
                 <div class="toolbox">
-                    <div class="tool teeth">
+                    <div class="tool teeth" id="teeth">
                         <div class="tool-icon">
                             <img src="/landscaper-v2/SVG/00-teeth.svg">
                         </div>
@@ -249,7 +253,7 @@
                             Teeth
                         </div>
                     </div>
-                    <div class="tool scissor">
+                    <div class="tool scissor" id="scissor">
                         <div class="tool-icon">
                             <img src="/landscaper-v2/SVG/01-scissors.svg">
                         </div>
@@ -258,7 +262,7 @@
                         </div>
                     </div>
 
-                    <div class="tool push">
+                    <div class="tool push" id="push">
                         <div class="tool-icon">
                             <img src="/landscaper-v2/SVG/02-push.svg">
                         </div>
@@ -266,7 +270,7 @@
                             Manual Lawnmower
                         </div>
                     </div>
-                    <div class="tool electric">
+                    <div class="tool electric" id="electric">
                         <div class="tool-icon">
                             <img src="/landscaper-v2/SVG/03-electric.svg">
                         </div>
@@ -275,7 +279,7 @@
                             Lawnmower
                         </div>
                     </div>
-                    <div class="tool team">
+                    <div class="tool team" id="team">
                         <div class="tool-icon">
                             <img src="/landscaper-v2/SVG/04-team.svg">
                         </div>
@@ -289,23 +293,23 @@
 
             <div class="message-box-container">
                 <div class="message-box" id="message-box">
-                    ze message
+
                 </div>
             </div>
 
-            <div class="bottom-block-container">
+            <div class="bottom-block-container" id="bottom">
                 <div class="money-container">
                     <div class="money" id="money">
-                        ze money
+                        $0
                     </div>
                 </div>
 
                 <div class="buttons-container">
                     <button class="work" id="work">
-                        work yo
+                        Work
                     </button>
                     <button class="upgrade" id="upgrade">
-                        upgrade
+                        Upgrade
                     </button>
                 </div>
             </div>
